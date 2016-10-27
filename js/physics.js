@@ -1,11 +1,19 @@
-var canvas;
-var context;
-prepCanv();
-function prepCanv(){
-	canvas = document.getElementById("canv");
-	$("#canv").attr("width",$(window).width());
-	$("#canv").attr("height",$(window).height());
-	context = canvas.getContext("2d");
+var objects = [];
+
+var baseObject = {
+	x: 0,
+	y: 0,
+	xVel: 0,
+	yVel: 0,
+	fric: .5,
+	rest: .5,
+	potEn: 0,
+	kinEn: 0,
+	shape: "Rectangle",
+	getX: function(){
+		return this.x;
+	},
+	getY: function(){
+		return this.y;
+	}
 }
-context.fillStyle = "blue";
-context.fillRect(0,0,20,20);
